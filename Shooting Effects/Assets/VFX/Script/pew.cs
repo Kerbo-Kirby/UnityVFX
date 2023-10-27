@@ -3,31 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
+[RequireComponent(typeof(Rigidbody))]
 public class pew : MonoBehaviour
 {
-
-    public GameObject prefab;
-
-   // public float force = 0;
-
-    public Vector3 shootDirection;
-
-   
-
+    private Rigidbody rBody;
+    public float force = 30f;
+    public VectorShoot shoot;
     public void Start()
     {
-         
-       
-        if (Input.GetKey(KeyCode.A))
 
-        {
-            // var forceDirection = new Vector3(0, 0, 0);
+        if (Input.GetKey(KeyCode.Mouse0))
+
+            rBody = GetComponent<Rigidbody>();
 
 
-         prefab =  GetComponent<GameObject>();
 
-            var forceDirection = new Vector3(0,1,0);
-        }
+        //var forceDirection = new Vector3(force, 0, 0);
+        rBody.AddRelativeForce(shoot.value * force);
+
+
+
+
     }
 }
 
