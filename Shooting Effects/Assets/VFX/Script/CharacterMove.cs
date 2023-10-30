@@ -11,7 +11,7 @@ public class CharacterMove : MonoBehaviour
 
 
 
-    //public Vector3 direction;
+    public Vector3 direction;
     public float f = 30f;
     public int speed;
     public CharacterController Character;
@@ -43,12 +43,12 @@ public class CharacterMove : MonoBehaviour
         Vector3 move = new Vector3(hAxis, 0, vAxis) * speed * Time.deltaTime;
         Character.Move(transform.position = move);
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Q))
 
         {
-            //Character.y += 5;
+            Vector3 direction = new Vector3(0, 1, 0) * gravity * Time.deltaTime;
 
-            
+         //(transform.position = direction);
 
 
         }
