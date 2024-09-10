@@ -175,9 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  f: 30
   speed: 5
   Character: {fileID: 613000597}
+  gravity: 0
 --- !u!65 &613000599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -331,6 +331,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1515718644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 311873459526047235, guid: b1e4cc2f84a3a8e4da79047800771637, type: 3}
+  m_PrefabInstance: {fileID: 8849417179721572893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1515718649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515718644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451e928921f43a84c8a9ef879fffb2e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 613000597}
+  spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,13 +376,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6170b2182aa90ab468ddf22e6e98ccb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   look: {x: 0, y: 0, z: 0}
   playr: {fileID: 613000602}
+  came: {fileID: 0}
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -380,7 +400,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 27.207644
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -389,7 +409,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 100
-  field of view: 48.8
+  field of view: 33.20838
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -414,13 +434,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.1663872, y: -0, z: -0, w: 0.98606056}
-  m_LocalPosition: {x: 0, y: 4.71, z: -10.08}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.14643209, y: -0, z: -0, w: 0.9892208}
+  m_LocalPosition: {x: 0, y: 2.78, z: -10.08}
+  m_LocalScale: {x: 1, y: 0.73408, z: 0.042169277}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 19.156, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.84, y: 0, z: 0}
 --- !u!114 &1687258586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,8 +579,12 @@ PrefabInstance:
       value: Sphere
       objectReference: {fileID: 0}
     - target: {fileID: 879107686441321957, guid: b1e4cc2f84a3a8e4da79047800771637, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 879107686441321957, guid: b1e4cc2f84a3a8e4da79047800771637, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8214462753367168062, guid: b1e4cc2f84a3a8e4da79047800771637, type: 3}
       propertyPath: m_RootOrder
